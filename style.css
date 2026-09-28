@@ -1,0 +1,220 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.dashboard-container {
+    background-color: white;
+    width: 100%;
+    max-width: 900px;
+    border: 2px solid #333;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: flex-end;
+}
+
+.action-buttons button {
+    background-color: #1976D2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.action-buttons button:hover {
+    background-color: #115293;
+}
+
+/* Header */
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+
+.header-text p {
+    margin: 2px 0;
+    font-size: 14px;
+}
+
+.header-text h2 {
+    margin: 5px 0 0 0;
+    font-size: 18px;
+}
+
+/* Student Info */
+.student-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+}
+
+.info-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-group label {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.info-group input {
+    border: none;
+    border-bottom: 1px solid #333;
+    font-size: 14px;
+    padding: 3px;
+    outline: none;
+}
+
+/* Tables */
+.assessment-section {
+    margin-bottom: 15px;
+}
+
+.section-header {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.ww-header { background-color: #D32F2F; }
+.pt-header { background-color: #F57C00; }
+.ex-header { background-color: #1976D2; }
+
+.score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
+}
+
+.score-table th, .score-table td {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 5px;
+    font-size: 13px;
+}
+
+.score-table th {
+    background-color: #f9f9f9;
+    font-weight: normal;
+}
+
+.score-table .label {
+    text-align: left;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    width: 200px;
+}
+
+.score-table td[contenteditable="true"]:focus {
+    background-color: #e3f2fd;
+    outline: 2px solid #1976D2;
+}
+
+.percentage-display {
+    text-align: right;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #555;
+}
+
+/* Final Grade Box */
+.final-grade-box {
+    text-align: right;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+}
+
+.final-grade-box h3 {
+    margin: 0;
+    color: #2e7d32;
+}
+
+/* Comments */
+.comments-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+    border-top: 2px solid #333;
+    padding-top: 15px;
+}
+
+.comment-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-box label {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.comment-box textarea {
+    resize: vertical;
+    padding: 5px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 600px) {
+    .student-info { grid-template-columns: 1fr; }
+    .comments-section { grid-template-columns: 1fr; }
+    .report-header { flex-direction: column; }
+    .header-text { margin: 10px 0; }
+}
+
+/* Print Styles (Hides buttons when printing) */
+@media print {
+    .action-buttons {
+        display: none !important;
+    }
+    body {
+        background-color: white;
+        padding: 0;
+    }
+    .dashboard-container {
+        border: none;
+        box-shadow: none;
+        max-width: 100%;
+    }
+}
